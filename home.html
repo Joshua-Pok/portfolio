@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/e617f52b14.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <header>
-    <nav>
-        <ul>
-            <li>About Me</li>
-            <li>My Work</li>
-            <li>Tech Skills</li>
-            <li>Contact</li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li>About Me</li>
+                <li>My Work</li>
+                <li>Tech Skills</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
     </header>
 
     <div id="wrapper">
@@ -23,9 +26,56 @@
             <div id="hero-desc">
                 <h1>Hello! I'm Joshua!</h1>
                 <p>Frontend Developer with a strong interest in Full-Stack</p>
+                <button>Get In Touch</button>
             </div>
             <img src="./assets/portfolio image.jpg" alt="A picture of me!" id="profile-img">
         </div>
+        
+        <section id="slider-wrapper">
+            <div id="slider" class="swiper">
+                <div class="swiper-wrapper card-list">
+                    <div class="swiper-slide card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/developer.jpg" alt="An image of my project" class="card-image">
+                            <p class="badge">MystyleLoft</p>
+                            <h2 class="card-title">A Fashion Ecommerce Website</h2>
+                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/designer.jpg" alt="An image of my project" class="card-image">
+                            <p class="badge">MystyleLoft</p>
+                            <h2 class="card-title">A Fashion Ecommerce Website</h2>
+                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/editor.jpg" alt="An image of my project" class="card-image">
+                            <p class="badge">MystyleLoft</p>
+                            <h2 class="card-title">A Fashion Ecommerce Website</h2>
+                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide card-item">
+                        <a href="#" class="card-link">
+                            <img src="/assets/developer.jpg" alt="An image of my project" class="card-image">
+                            <p class="badge">MystyleLoft</p>
+                            <h2 class="card-title">A Fashion Ecommerce Website</h2>
+                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+                <!-- Swiper Pagination and Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
