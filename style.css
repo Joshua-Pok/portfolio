@@ -233,6 +233,31 @@ li a:hover {
   font-size: 1rem;
 }
 
+.tech-icon .html{
+    color: #e34c26;
+}
+.tech-icon .css{
+    color: #264de4;
+}
+.tech-icon .js{
+    color: #f0db4f;
+}
+.tech-icon .react{
+    color: #61dbfb;
+}
+.tech-icon .database{
+    color: #00758f;
+}
+.tech-icon .php{
+    color: #8993be;
+}
+.tech-icon .git{
+    color: #f1502f;
+}
+.tech-icon .github{
+    color: #fafbfc;
+}
+
 /* Slider Section */
 #slider-wrapper {
   padding: 60px 20px;
@@ -346,7 +371,6 @@ li a:hover {
   cursor: not-allowed;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   #hero {
     flex-direction: column-reverse;

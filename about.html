@@ -252,7 +252,7 @@
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="#work">My Work</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -265,7 +265,7 @@
                 <p>With expertise in frontend technologies and a keen eye for design, I strive to build applications that not only work flawlessly but also provide an exceptional user experience.</p>
             </div>
             <div class="media-content">
-                <img src="/placeholder.svg?height=600&width=400" alt="Profile image">
+                <img src="./assets/photo_2025-01-23_15-19-43.jpg" alt="Profile image">
             </div>
         </div>
     </section>
@@ -294,7 +294,7 @@
                 <p>I'm also passionate about UI/UX design and constantly seek to bridge the gap between functional code and beautiful interfaces.</p>
             </div>
             <div class="media-content">
-                <img src="/placeholder.svg?height=600&width=400" alt="Dancing image">
+                <video src="./assets/video_2025-01-23_12-47-10.mp4" alt="Dance video" autoplay loop muted controls>
             </div>
         </div>
     </section>
@@ -316,7 +316,6 @@
     </footer>
 
     <script>
-        // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.2
         };
@@ -324,7 +323,6 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Add active class to container
                     entry.target.classList.add('active');
                     
                     // Add active class to text and media content
