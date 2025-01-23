@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <script src="https://kit.fontawesome.com/e617f52b14.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D7CEC7;
+            --accent1: #565656;
+            --accent2: #76323F;
+            --background: #c09F80;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(192, 159, 128, 0.95);
+            height: 80px;
+            padding-right: 20px;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 30px;
+            font-family: Merriweather, serif;
+            font-weight: 500;
+            font-size: 1.25rem;
+        }
+
+        nav li a {
+            color: var(--accent1);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav li a:hover {
+            color: var(--accent2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            padding-top: 80px; /* Add padding for fixed header */
+        }
+
+        .about-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            background: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .container.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-content, .media-content {
+            flex: 1;
+        }
+
+        .text-content {
+            padding: 2rem;
+        }
+
+        .text-content h2 {
+            font-size: 2.5rem;
+            color: var(--accent2);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .text-content h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background: var(--accent2);
+            transition: width 0.3s ease;
+        }
+
+        .text-content.active h2::after {
+            width: 100px;
+        }
+
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--accent1);
+            margin-bottom: 1.5rem;
+        }
+
+        .media-content {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .media-content img, 
+        .media-content video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+            transition: transform 1s ease;
+        }
+
+        .media-content.active img,
+        .media-content.active video {
+            transform: scale(1);
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section:nth-child(even) {
+            background: var(--accent1);
+            color: white;
+        }
+
+        .section:nth-child(even) .text-content h2 {
+            color: white;
+        }
+
+        .section:nth-child(even) .text-content h2::after {
+            background: white;
+        }
+
+        .section:nth-child(even) .text-content p {
+            color: #f0f0f0;
+        }
+
+        /* Reverse layout for even sections */
+        .section:nth-child(even) .container {
+            flex-direction: row-reverse;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--accent1);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icons a:hover {
+            color: white;
+            transform: translateY(-5px);
+            background: var(--accent2);
+        }
+
+        .footer-text {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column !important;
+                gap: 2rem;
+            }
+
+            .text-content, .media-content {
+                width: 100%;
+            }
+
+            .text-content {
+                padding: 1rem;
+            }
+
+            .text-content h2 {
+                font-size: 2rem;
+            }
+
+            .media-content {
+                height: 300px;
+            }
+
+            .social-icons {
+                gap: 1rem;
+            }
+
+            .social-icons a {
+                font-size: 1.5rem;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="#work">My Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="text-content">
+                <h2>My Journey</h2>
+                <p>Hello! I'm Joshua, a passionate developer with a love for creating beautiful and functional web experiences. My journey in tech began with a simple curiosity about how websites work, and it has evolved into a full-fledged career in web development.</p>
+                <p>With expertise in frontend technologies and a keen eye for design, I strive to build applications that not only work flawlessly but also provide an exceptional user experience.</p>
+            </div>
+            <div class="media-content">
+                <img src="/placeholder.svg?height=600&width=400" alt="Profile image">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="text-content">
+                <h2>My Approach</h2>
+                <p>I believe in writing clean, maintainable code that solves real-world problems. My approach to development combines technical expertise with creative problem-solving.</p>
+                <p>Whether it's crafting responsive layouts, optimizing performance, or implementing complex features, I'm always excited to take on new challenges and learn new technologies.</p>
+            </div>
+            <div class="media-content">
+                <video autoplay muted loop>
+                    <source src="your-coding-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="text-content">
+                <h2>Beyond Coding</h2>
+                <p>When I'm not coding, you can find me exploring new dance moves and choreographies. Dancing has taught me the importance of rhythm, precision, and continuous practice - principles that I apply to my development work as well.</p>
+                <p>I'm also passionate about UI/UX design and constantly seek to bridge the gap between functional code and beautiful interfaces.</p>
+            </div>
+            <div class="media-content">
+                <img src="/placeholder.svg?height=600&width=400" alt="Dancing image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com/@yourusername" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p class="footer-text">&copy; 2024 Joshua. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add active class to container
+                    entry.target.classList.add('active');
+                    
+                    // Add active class to text and media content
+                    const textContent = entry.target.querySelector('.text-content');
+                    const mediaContent = entry.target.querySelector('.media-content');
+                    
+                    if (textContent) textContent.classList.add('active');
+                    if (mediaContent) mediaContent.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all containers
+        document.querySelectorAll('.container').forEach(container => {
+            observer.observe(container);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

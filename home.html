@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Joshua's Portfolio</title>
     <script src="https://kit.fontawesome.com/e617f52b14.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li>About Me</li>
-                <li>My Work</li>
-                <li>Tech Skills</li>
-                <li>Contact</li>
+                <li><a href="./about.html">About Me</a></li>
+                <li><a href="#slider-wrapper">My Work</a></li>
+                <li><a href="#tech-stack">Tech Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +26,7 @@
                 <div class="animated-text">
                     I'm a <span></span>
                 </div>
-                <button>Get In Touch</button>
+                <button class="cta-button">Get In Touch</button>
             </div>
             <img src="./assets/portfolio image.jpg" alt="A picture of me!" id="profile-img">
         </div>
@@ -37,36 +35,35 @@
             <h2>Tech Stack</h2>
             <hr>
             <div id="tech-list">
-                <div id="tech-icon">
+                <div class="tech-icon">
                     <i class="fa-brands fa-html5 html"></i>
                     <h3>HTML</h3>
                 </div>
-               <div id="tech-icon">
+               <div class="tech-icon">
                 <i class="fa-brands fa-css3-alt" id="css"></i>
                 <h3>CSS</h3>
                </div>
-               <div id="tech-icon">
+               <div class="tech-icon">
                 <i class="fa-brands fa-js js"></i>
                 <h3>Javascript</h3>
                </div>
-               <div id="tech-icon">
+               <div class="tech-icon">
                 <i class="fa-brands fa-react react"></i>
                 <h3>ReactJS</h3>
                </div>
-               <div id="tech-icon">
+               <div class="tech-icon">
                 <i class="fa-solid fa-database database"></i>
                 <h3>MySQL/MongoDB</h3>
                </div>
-               <div id="tech-icon">
+               <div class="tech-icon">
                 <i class="fa-brands fa-php php"></i>
                 <h3>PHP</h3>
                </div>
-               <div id="tech-icon">
+               <div class="tech-icon">
                 <i class="fa-brands fa-git"></i>
                 <h3>git</h3>
                </div>
-            </div>
-               <div id="tech-icon">
+               <div class="tech-icon">
                 <i class="fa-brands fa-github"></i>
                 <h3>Github</h3>
                </div>
@@ -75,50 +72,59 @@
         
         <section id="slider-wrapper">
             <h1>My Work</h1>
-            <div id="slider" class="swiper">
-                <div class="swiper-wrapper card-list">
-                    <div class="swiper-slide card-item">
-                        <a href="#" class="card-link">
-                            <img src="/assets/developer.jpg" alt="An image of my project" class="card-image">
-                            <p class="badge">MystyleLoft</p>
-                            <h2 class="card-title">A Fashion Ecommerce Website</h2>
-                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
-                        </a>
-                    </div>
-                    <div class="swiper-slide card-item">
-                        <a href="#" class="card-link">
-                            <img src="/assets/designer.jpg" alt="An image of my project" class="card-image">
-                            <p class="badge">MystyleLoft</p>
-                            <h2 class="card-title">A Fashion Ecommerce Website</h2>
-                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
-                        </a>
-                    </div>
-                    <div class="swiper-slide card-item">
-                        <a href="#" class="card-link">
-                            <img src="/assets/editor.jpg" alt="An image of my project" class="card-image">
-                            <p class="badge">MystyleLoft</p>
-                            <h2 class="card-title">A Fashion Ecommerce Website</h2>
-                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
-                        </a>
-                    </div>
-                    <div class="swiper-slide card-item">
-                        <a href="#" class="card-link">
-                            <img src="/assets/developer.jpg" alt="An image of my project" class="card-image">
-                            <p class="badge">MystyleLoft</p>
-                            <h2 class="card-title">A Fashion Ecommerce Website</h2>
-                            <button class="card-button"><i class="fa-solid fa-arrow-right"></i></button>
-                        </a>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <div class="card">
+                            <h2>E-Commerce Platform</h2>
+                            <p>A full-featured online shopping platform with cart functionality and payment integration.</p>
+                            <div class="technologies">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h2>Weather Dashboard</h2>
+                            <p>Real-time weather application with forecast data and interactive maps.</p>
+                            <div class="technologies">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Weather API</span>
+                                <span class="tech-tag">CSS3</span>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h2>Task Manager</h2>
+                            <p>A collaborative task management system with real-time updates and team features.</p>
+                            <div class="technologies">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Tailwind</span>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h2>Social Media App</h2>
+                            <p>A social networking platform with real-time messaging and post sharing.</p>
+                            <div class="technologies">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">GraphQL</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Swiper Pagination and Navigation -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="slider-buttons">
+                    <button class="slider-btn" id="prevBtn">&#10094;</button>
+                    <button class="slider-btn" id="nextBtn">&#10095;</button>
+                </div>
             </div>
         </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
